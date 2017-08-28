@@ -92,7 +92,6 @@ $(document).ready(function (){
           points = points + 1
           $('.points-label').text(points)
           $(event.target).removeClass('no-match')
-          console.log(divOfPreviousClick)
           $(divOfPreviousClick).removeClass('no-match')
           window.setTimeout(matchAnimation, 1100)
         }
@@ -103,24 +102,18 @@ $(document).ready(function (){
           window.setTimeout(flipCardToBack, 1100)
         }
 
-
-
-
         // test code!!!! ???
-        console.log($('#card-holder').children())
         // keep track of matches, apply an animation with all are matched
         if ($('#card-holder').children().hasClass('no-match')) {
-          console.log('almost')
         }
         else {
           console.log('donezies')
+          // alert('you win!')
+          window.setTimeout(donezies, 1100)
           // create donezies function with delayed animtion
           // also turn off click listener so no more clicks can be made on divs.. shut it down
 
         }
-
-
-
 
         // function to reset to cardBackImage with animation if it's not a match
         function flipCardToBack() {
@@ -151,7 +144,6 @@ $(document).ready(function (){
         // function for points animation
 
 
-        // function for donezies animation
 
 
 
@@ -160,6 +152,21 @@ $(document).ready(function (){
       }
     })
 
+
+    // function for donezies animation
+    function donezies() {
+      $('#card-holder').addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $('#card-holder').removeClass('animated bounce')
+      })
+      $('.card').unbind('click')
+      // $('#youwin-modal').modal()
+
+      // new click handler
+      $('#card-holder').click(event, function() {
+        console.log(event.target)
+        // $('#youwin-modal')
+      })
+    }
 
 
 
@@ -173,7 +180,7 @@ $(document).ready(function (){
 
 
 
-
+  $('#youwin-modal').modal()
 
 
   // shuffle button click to reload page
