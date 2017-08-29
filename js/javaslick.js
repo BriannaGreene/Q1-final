@@ -107,7 +107,22 @@ $(document).ready(function (){
           console.log(points)
           console.log('you just destroyed planet earth!')
           $('#youlose-modal').modal({ backdrop: false })
-          console.log($('#card-holder').children())
+          $('#card-holder').children().addClass('animated rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $('#card-holder').children().remove()
+          })
+          // TEST CODE //////!!!!!
+          let childArray = $('#card-holder').children()
+          console.log(childArray)
+          for (var i = 0; i < childArray.length; i++) {
+            let min = -400
+            let max = 400
+            let randomNum = Math.floor(Math.random() * (max - min + 1)) + min
+            console.log(randomNum)
+            // let x = $.randomBetween(-400, 400)
+            // let y = $.randomBetween(-500, 500)
+            childArray[i].animate({top: `${randomNum}px`, left: `${randomNum}px`}, 1000)
+          }
+
         }
 
         // keep track of matches, apply an animation when all are matched and game is won, run function to switch modes
@@ -145,8 +160,20 @@ $(document).ready(function (){
         }
         // reset clicks to 0
         clicks = 0
+
+
+
+
       }
+
+
+
+
+
     })
+
+
+
 
     // function for donezies (win!) animation/ not play mode
     function donezies() {

@@ -102,3 +102,13 @@ body {
   font-weight: 700;
   padding-top: 10px;
 }
+
+.fly {
+  animation-duration: 2s;
+  animation-name: fly;
+  
+}
+
+@keyframes fly {
+
+}
