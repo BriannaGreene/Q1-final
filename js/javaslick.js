@@ -102,17 +102,19 @@ $(document).ready(function (){
           window.setTimeout(flipCardToBack, 1100)
         }
 
-        // test code!!!! ???
-        // keep track of matches, apply an animation with all are matched
+        // you lose pop up and animation
+        if (points == 0) {
+          console.log(points)
+          console.log('you just destroyed planet earth!')
+          $('#youlose-modal').modal({ backdrop: false })
+          console.log($('#card-holder').children())
+        }
+
+        // keep track of matches, apply an animation when all are matched and game is won, run function to switch modes
         if ($('#card-holder').children().hasClass('no-match')) {
         }
         else {
-          console.log('donezies')
-          // alert('you win!')
           window.setTimeout(donezies, 1100)
-          // create donezies function with delayed animtion
-          // also turn off click listener so no more clicks can be made on divs.. shut it down
-
         }
 
         // function to reset to cardBackImage with animation if it's not a match
@@ -130,7 +132,7 @@ $(document).ready(function (){
           $(divOfPreviousClick).css('background-image', 'url(' + cardBackImage + ')')
         }
 
-        // function animation to pulse when match happens
+        // function animation when match happens
         function matchAnimation() {
           // animation for last clicked
           $(event.target).addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -141,47 +143,46 @@ $(document).ready(function (){
             $(divOfPreviousClick).removeClass('animated tada')
           })
         }
-        // function for points animation
-
-
-
-
-
         // reset clicks to 0
         clicks = 0
       }
     })
 
-
-    // function for donezies animation
+    // function for donezies (win!) animation/ not play mode
     function donezies() {
       $('#card-holder').addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $('#card-holder').removeClass('animated bounce')
       })
+      // remove game play mode
       $('.card').unbind('click')
-      // $('#youwin-modal').modal()
-
-      // new click handler
+      // you win pop up
+      $('#youwin-modal').modal({ backdrop: false })
+      // new click handler to show info about each photo
       $('#card-holder').click(event, function() {
         console.log(event.target)
-        // $('#youwin-modal')
+        console.log(cardsArrayOfTwenty)
+        for (var i = 0; i < cardsArrayOfTwenty.length; i++) {
+          let imageId = cardsArrayOfTwenty[i]['id']
+          let imageTitle = cardsArrayOfTwenty[i]['title']
+          let imageUrl = cardsArrayOfTwenty[i]['url']
+          let imageDate = cardsArrayOfTwenty[i]['date']
+          let imageExp = cardsArrayOfTwenty[i]['explanation']
+          if (event.target.title == imageId) {
+            console.log(imageTitle)
+            console.log($('#target-title').text())
+            console.log(imageUrl)
+            $('#info-modal').modal({ backdrop: false })
+            $('#target-title').text(imageTitle)
+            $('#target-photo').attr('src', `${imageUrl}`)
+            $('#target-date').text(imageDate)
+            $('#target-info').text(imageExp)
+          }
+        }
       })
     }
 
-
-
-
-
   // end of main function bracket
   })
-
-
-
-
-
-
-  $('#youwin-modal').modal()
-
 
   // shuffle button click to reload page
   $('.button').click(function(){

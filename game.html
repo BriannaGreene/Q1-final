@@ -28,37 +28,64 @@
           <label class="points-label" for="">10</label>
         </div>
 
-        <div id="youwin-modal" class="modal">
+        <div id="youlose-modal" class="modal">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">RATS!   YOU LOSE!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <img id="lose-photo" src="https://media.giphy.com/media/reV7VvFaYCTkY/giphy.gif" alt="Cat gif">
+                <p>Oh no! You failed to save the world. Everyone shall perish!</p>
+                <p>Hit 'Shuffle' to try again!</p>
               </div>
             </div>
           </div>
         </div>
 
+        <div id="youwin-modal" class="modal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">MEOW!  YOU WIN!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img id="boots-portrait" src="http://www.thinkgeek.com/images/products/additional/large/isvs_space_cat_take_off_dd.jpg" alt="Catstronaut Boots">
+                <p>Congratulations! With your help, Catstronaut Boots Aldrin has stopped the comet from destroying Planet Earth in 2442.Close this window and click on the images for more information!</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div id="info-modal" class="modal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 id="target-title" class="modal-title">Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img id="target-photo" src="http://www.thinkgeek.com/images/products/additional/large/isvs_space_cat_take_off_dd.jpg" alt="">
+                <p id="target-date">DATE</p>
+                <p id="target-info">filler</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div id="card-holder" class="row justify-content-center">
         </div>
         <div class="button-holder">
           <button class="btn button" type="button" name="button">shuffle</button>
         </div>
-
-
-
-
 
       </div>
     </div>

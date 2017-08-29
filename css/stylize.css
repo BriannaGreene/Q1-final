@@ -67,3 +67,38 @@ body {
   box-shadow: 0px 0px 7px black;
   height: 47px;
 }
+
+#lose-photo {
+  float: left;
+  max-height: 150px;
+  margin-right: 10px;
+}
+
+#boots-portrait {
+  float: left;
+  max-height: 150px;
+  margin-right: 10px;
+}
+
+.modal-footer {
+  justify-content: center
+}
+
+.modal-title {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.modal-header {
+  background-color: #edd9ff;
+}
+
+#target-photo {
+  max-width: 100%;
+  margin: auto;
+}
+
+#target-date {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 10px;
+}
