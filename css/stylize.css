@@ -17,10 +17,6 @@ body {
   min-height: 100%;
 }
 
-.main-container {
-  /*background-color: rgba(255, 255, 255, 0.25);*/
-}
-
 .main-header {
   color: #edd9ff;
   font-family: 'Luckiest Guy', cursive;
@@ -103,12 +99,34 @@ body {
   padding-top: 10px;
 }
 
-.fly {
-  animation-duration: 2s;
-  animation-name: fly;
-  
+.fly-downright {
+  transform: translate(400px, 400px);
+  /*-webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;*/
 }
 
-@keyframes fly {
+.fly-downleft {
+  transform: translate(-400px, 400px);
+  /*-webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;*/
+}
 
+.fly-upright {
+  transform: translate(400px, -400px);
+  /*-webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;*/
+}
+
+.fly-upleft {
+  transform: translate(-400px, -400px);
+  /*-webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;*/
 }

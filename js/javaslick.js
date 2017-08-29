@@ -104,25 +104,22 @@ $(document).ready(function (){
 
         // you lose pop up and animation
         if (points == 0) {
-          console.log(points)
-          console.log('you just destroyed planet earth!')
+          console.log('You just destroyed planet earth!')
           $('#youlose-modal').modal({ backdrop: false })
+
           $('#card-holder').children().addClass('animated rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $('#card-holder').children().remove()
           })
-          // TEST CODE //////!!!!!
-          let childArray = $('#card-holder').children()
-          console.log(childArray)
-          for (var i = 0; i < childArray.length; i++) {
-            let min = -400
-            let max = 400
-            let randomNum = Math.floor(Math.random() * (max - min + 1)) + min
-            console.log(randomNum)
-            // let x = $.randomBetween(-400, 400)
-            // let y = $.randomBetween(-500, 500)
-            childArray[i].animate({top: `${randomNum}px`, left: `${randomNum}px`}, 1000)
-          }
-
+          $('.card[title="0"]').addClass('fly-downright')
+          $('.card[title="1"]').addClass('fly-downright')
+          $('.card[title="2"]').addClass('fly-downleft')
+          $('.card[title="3"]').addClass('fly-downleft')
+          $('.card[title="4"]').addClass('fly-downleft')
+          $('.card[title="5"]').addClass('fly-upright')
+          $('.card[title="6"]').addClass('fly-upright')
+          $('.card[title="7"]').addClass('fly-upright')
+          $('.card[title="8"]').addClass('fly-upleft')
+          $('.card[title="9"]').addClass('fly-upleft')
         }
 
         // keep track of matches, apply an animation when all are matched and game is won, run function to switch modes
@@ -160,23 +157,13 @@ $(document).ready(function (){
         }
         // reset clicks to 0
         clicks = 0
-
-
-
-
       }
-
-
-
-
-
     })
-
-
 
 
     // function for donezies (win!) animation/ not play mode
     function donezies() {
+      console.log('Hooray, MeowMix for everyone!')
       $('#card-holder').addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $('#card-holder').removeClass('animated bounce')
       })
@@ -186,8 +173,6 @@ $(document).ready(function (){
       $('#youwin-modal').modal({ backdrop: false })
       // new click handler to show info about each photo
       $('#card-holder').click(event, function() {
-        console.log(event.target)
-        console.log(cardsArrayOfTwenty)
         for (var i = 0; i < cardsArrayOfTwenty.length; i++) {
           let imageId = cardsArrayOfTwenty[i]['id']
           let imageTitle = cardsArrayOfTwenty[i]['title']
@@ -195,9 +180,6 @@ $(document).ready(function (){
           let imageDate = cardsArrayOfTwenty[i]['date']
           let imageExp = cardsArrayOfTwenty[i]['explanation']
           if (event.target.title == imageId) {
-            console.log(imageTitle)
-            console.log($('#target-title').text())
-            console.log(imageUrl)
             $('#info-modal').modal({ backdrop: false })
             $('#target-title').text(imageTitle)
             $('#target-photo').attr('src', `${imageUrl}`)
