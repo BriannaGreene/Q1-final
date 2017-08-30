@@ -1,6 +1,18 @@
 $(document).ready(function (){
 
-  //NASA APOD api
+  // turn on the music
+  // gameAudio = new Audio('audio/StarCommander1.wav');
+  // $(gameAudio).bind('ended', function()  {
+  //   gameAudio.currentTime = 0;
+  //   gameAudio.play();
+  // });
+  // gameAudio.play();
+  // ADD BUTTON TO TURN MUSIC OFF
+  $('.sound-btn').click(function() {
+    // toggle sound on and off
+  })
+
+  // NASA APOD api
   let nasaData = $.getJSON('https://api.nasa.gov/planetary/apod?api_key=vTuOXQ2zPozXkD0WTA8SvQUcGIlXNoh9uR3IUqEe&start_date=2017-06-01&end_date=2017-08-24', function(data) {
 
     // filter and remove videos from data set (only images and gifs)
@@ -108,18 +120,17 @@ $(document).ready(function (){
           $('#youlose-modal').modal({ backdrop: false })
 
           $('#card-holder').children().addClass('animated rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $('#card-holder').children().remove()
-          })
-          $('.card[title="0"]').addClass('fly-downright')
-          $('.card[title="1"]').addClass('fly-downright')
-          $('.card[title="2"]').addClass('fly-downleft')
-          $('.card[title="3"]').addClass('fly-downleft')
-          $('.card[title="4"]').addClass('fly-downleft')
-          $('.card[title="5"]').addClass('fly-upright')
-          $('.card[title="6"]').addClass('fly-upright')
-          $('.card[title="7"]').addClass('fly-upright')
-          $('.card[title="8"]').addClass('fly-upleft')
-          $('.card[title="9"]').addClass('fly-upleft')
+            $('#card-holder').children().remove() })
+          // $('.card[title="0"]').addClass('fly-downright')
+          // $('.card[title="1"]').addClass('fly-downright')
+          // $('.card[title="2"]').addClass('fly-downleft')
+          // $('.card[title="3"]').addClass('fly-downleft')
+          // $('.card[title="4"]').addClass('fly-downleft')
+          // $('.card[title="5"]').addClass('fly-upright')
+          // $('.card[title="6"]').addClass('fly-upright')
+          // $('.card[title="7"]').addClass('fly-upright')
+          // $('.card[title="8"]').addClass('fly-upleft')
+          // $('.card[title="9"]').addClass('fly-upleft')
         }
 
         // keep track of matches, apply an animation when all are matched and game is won, run function to switch modes

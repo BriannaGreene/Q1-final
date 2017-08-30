@@ -64,6 +64,12 @@ body {
   height: 47px;
 }
 
+.sound-btn {
+  margin-left: 650px;
+  font-size: 15px;
+  height: 30px;
+}
+
 #lose-photo {
   float: left;
   max-height: 150px;
@@ -101,32 +107,32 @@ body {
 
 .fly-downright {
   transform: translate(400px, 400px);
-  /*-webkit-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;*/
+  transition: 1s ease-in-out;
 }
 
 .fly-downleft {
   transform: translate(-400px, 400px);
-  /*-webkit-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;*/
+  transition: 1s ease-in-out;
 }
 
 .fly-upright {
   transform: translate(400px, -400px);
-  /*-webkit-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;*/
+  transition: 1s ease-in-out;
 }
 
 .fly-upleft {
   transform: translate(-400px, -400px);
-  /*-webkit-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;*/
+  transition: 1s ease-in-out;
 }
