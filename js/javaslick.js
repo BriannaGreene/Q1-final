@@ -1,19 +1,45 @@
 $(document).ready(function (){
 
+  // show loading screen on page load
+  $('#loading-modal').modal()
+
+  // animate loading screen text
+  $(function() {
+    setTimeout(function() {
+      $('.logo-animation').removeClass('hidden')
+    }, 200)
+    setTimeout(function() {
+      $('#memory-text').removeClass('hidden').addClass('animated flipInX')
+    }, 2500)
+  })
+
   // turn on the music
-  // gameAudio = new Audio('audio/StarCommander1.wav');
+  // let gameAudio = new Audio('audio/StarCommander1.wav');
   // $(gameAudio).bind('ended', function()  {
   //   gameAudio.currentTime = 0;
   //   gameAudio.play();
   // });
   // gameAudio.play();
-  // ADD BUTTON TO TURN MUSIC OFF
+
+  // button to toggle music play/pause
   $('.sound-btn').click(function() {
-    // toggle sound on and off
+    if (gameAudio.paused == false) {
+      gameAudio.pause()
+    } else {
+        gameAudio.play()
+    }
   })
 
   // NASA APOD api
   let nasaData = $.getJSON('https://api.nasa.gov/planetary/apod?api_key=vTuOXQ2zPozXkD0WTA8SvQUcGIlXNoh9uR3IUqEe&start_date=2017-06-01&end_date=2017-08-24', function(data) {
+
+    // hide loading modal when content is ready
+    $('.card-holder').ready(function() {
+      console.log('ready for launch!')
+      $('#loading-modal').fadeOut(1000, function() {
+        $('#loading-modal').modal('hide')
+      })
+    })
 
     // filter and remove videos from data set (only images and gifs)
     let starPhotosArray = data.filter((element) => {
@@ -117,20 +143,16 @@ $(document).ready(function (){
         // you lose pop up and animation
         if (points == 0) {
           console.log('You just destroyed planet earth!')
+          gameAudio.pause()
+          let marioAudio = new Audio('audio/SuperMarioEffect.mp3')
+          $(marioAudio).bind(function()  {
+            marioAudio.currentTime = 0;
+            marioAudio.play();
+          });
+          marioAudio.play();
           $('#youlose-modal').modal({ backdrop: false })
-
           $('#card-holder').children().addClass('animated rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $('#card-holder').children().remove() })
-          // $('.card[title="0"]').addClass('fly-downright')
-          // $('.card[title="1"]').addClass('fly-downright')
-          // $('.card[title="2"]').addClass('fly-downleft')
-          // $('.card[title="3"]').addClass('fly-downleft')
-          // $('.card[title="4"]').addClass('fly-downleft')
-          // $('.card[title="5"]').addClass('fly-upright')
-          // $('.card[title="6"]').addClass('fly-upright')
-          // $('.card[title="7"]').addClass('fly-upright')
-          // $('.card[title="8"]').addClass('fly-upleft')
-          // $('.card[title="9"]').addClass('fly-upleft')
         }
 
         // keep track of matches, apply an animation when all are matched and game is won, run function to switch modes
@@ -204,15 +226,15 @@ $(document).ready(function (){
   // end of main function bracket
   })
 
+
   // shuffle button click to reload page
-  $('.button').click(function(){
-    $('.button').addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-      $('.button').removeClass('animated tada')
+  $('#shuffle-button').click(function(){
+    $('#shuffle-button').addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      $('#shuffle-button').removeClass('animated tada')
       window.location.reload()
     })
     $('#card-holder').addClass('animated zoomOut')
   })
-
 
 // document.ready closing bracket
 })
