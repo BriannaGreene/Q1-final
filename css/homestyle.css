@@ -1,0 +1,108 @@
+.hero {
+  height: 650px;
+  background-image: url(../imgs/casey-horner-339165.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#game-title {
+  color: white;
+  font-size: 100px;
+  font-family: 'Baloo Tammudu', cursive;
+  padding-top: 200px;
+}
+
+.logo {
+  list-style: none;
+  position: absolute;
+  text-align: center;
+  padding: 200px 0 0 0;
+}
+
+.logo li {
+  color: white;
+  display: inline-block;
+  font-family: 'Baloo Tammudu', cursive;
+  font-size: 100px;
+  /*opacity: 1;*/
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#game-subtitle {
+  color: #bdbdbd;
+  padding-top: 300px;
+  font-family: 'Baloo Tammudu', cursive;
+  font-size: 50px;
+}
+
+.about {
+  width: 100%;
+  background-color: #1a7a75;
+  height: 700px;
+}
+
+.button {
+  background-color: #1a7a75;
+  border: none;
+}
+
+.button:hover {
+  background-color: #1ca89f;
+  border: none;
+}
+
+.arrow {
+  color: #1a7a75;
+  font-size: 50px;
+  padding-top: 190px;
+}
+
+.arrow:hover {
+  color: #1ca89f;
+}
+
+#boots-header {
+  color: white;
+  font-family: 'Baloo Tammudu', cursive;
+  font-size: 50px;
+  padding-top: 100px;
+}
+
+#boots-sub {
+  color: #bdbdbd;
+  font-family: 'Baloo Tammudu', cursive;
+  font-size: 40px;
+  /*padding-top: 100px;*/
+}
+
+.boots-image {
+  max-width: 100%;
+}
+
+.margin {
+  margin-left: 50px;
+  margin: right: 50px;
+  padding-top: 50px;
+}
+
+p {
+  color: #bdbdbd;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.play-button {
+  margin: 30px;
+  background-color: #1ca89f;
+  color: white;
+}
+
+.play-button:hover {
+  margin: 30px;
+  background-color: #22c7bc;
+  color: white;
+}
