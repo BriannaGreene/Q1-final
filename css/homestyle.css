@@ -3,6 +3,7 @@
   background-image: url(../imgs/casey-horner-339165.png);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 #game-title {
@@ -24,7 +25,6 @@
   display: inline-block;
   font-family: 'Baloo Tammudu', cursive;
   font-size: 100px;
-  /*opacity: 1;*/
 }
 
 .hidden {
@@ -36,6 +36,7 @@
   padding-top: 300px;
   font-family: 'Baloo Tammudu', cursive;
   font-size: 50px;
+  text-align: center;
 }
 
 .about {
@@ -75,7 +76,6 @@
   color: #bdbdbd;
   font-family: 'Baloo Tammudu', cursive;
   font-size: 40px;
-  /*padding-top: 100px;*/
 }
 
 .boots-image {
@@ -105,4 +105,16 @@ p {
   margin: 30px;
   background-color: #22c7bc;
   color: white;
+}
+
+.footer {
+  background-color: #00363d;
+  height: 40px;
+  text-align: center;
+}
+
+#footer-text {
+  font-size: 12px;
+  padding-top: 10px;
+  color: #1a7a75;
 }

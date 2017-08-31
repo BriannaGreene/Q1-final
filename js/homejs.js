@@ -41,9 +41,9 @@ $(document).ready(() => {
     window.location.href = 'game.html'
   })
 
-  $('.arrow').click(() => {
-    console.log('ok')
-    $('html, body').animate(() => { scrollTop: '+=600px' }, 1000)
-  })
+  $('.arrow').click(function() {
+  $('html, body').animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});
 
 })

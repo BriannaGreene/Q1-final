@@ -4,14 +4,10 @@ $(document).ready(function (){
   $('#loading-modal').modal()
 
   // animate loading screen text
-  $(function() {
-    setTimeout(function() {
-      $('.logo-animation').removeClass('hidden')
-    }, 200)
-    setTimeout(function() {
-      $('#memory-text').removeClass('hidden').addClass('animated flipInX')
-    }, 2500)
-  })
+  setTimeout(() => {
+    $('.1').removeClass('hidden').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      $('.1').removeClass('animated fadeIn')
+    })}, 1000)
 
   // turn on the music
   let gameAudio = new Audio('audio/StarCommander1.wav');
@@ -193,7 +189,6 @@ $(document).ready(function (){
       }
     })
 
-
     // function for donezies (win!) animation/ not play mode
     function donezies() {
       console.log('Hooray, MeowMix for everyone!')
@@ -222,10 +217,8 @@ $(document).ready(function (){
         }
       })
     }
-
   // end of main function bracket
   })
-
 
   // shuffle button click to reload page
   $('#shuffle-button').click(function(){
