@@ -1,5 +1,5 @@
 .hero {
-  height: 650px;
+  height: 700px;
   background-image: url(../imgs/casey-horner-339165.png);
   background-size: cover;
   background-position: center;
@@ -42,7 +42,7 @@
 .about {
   width: 100%;
   background-color: #1a7a75;
-  height: 700px;
+  height: 720px;
 }
 
 .button {

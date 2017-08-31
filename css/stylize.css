@@ -115,7 +115,7 @@ body {
   /*position: absolute;*/
   width: 100%;
   padding: 0px;
-  height: 150px;
+  height: 100px;
   text-align: center;
 }
 
@@ -124,21 +124,13 @@ body {
   display: inline-block;
   font-family: 'Baloo Tammudu', cursive;
   font-size: 50px;
-  padding-bottom: 200px;
-  /*opacity: 1;*/
-  /*transition: all 2s ease;*/
 }
 
 .hidden {
   opacity: 0;
 }
 
-.modal-content {
-  border: none;
-  background-color: #00363d;
-}
-
 #loading-graphic {
-  max-height: 500px;
+  max-height: 400px;
   width: 100%;
 }

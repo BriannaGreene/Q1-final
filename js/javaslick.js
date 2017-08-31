@@ -124,6 +124,12 @@ $(document).ready(function (){
         // if its a match, animate
         if (event.target.title == titleOfPreviousClick) {
           points = points + 1
+          let meow = new Audio('audio/meow.mp3')
+          $(meow).bind(function() {
+            meow.currentTime = 0
+            meow.play()
+          })
+          meow.play()
           $('.points-label').text(points)
           $(event.target).removeClass('no-match')
           $(divOfPreviousClick).removeClass('no-match')
@@ -142,9 +148,9 @@ $(document).ready(function (){
           let marioAudio = new Audio('audio/SuperMarioEffect.mp3')
           $(marioAudio).bind(function()  {
             marioAudio.currentTime = 0;
-            marioAudio.play();
-          });
-          marioAudio.play();
+            marioAudio.play()
+          })
+          marioAudio.play()
           $('#youlose-modal').modal({ backdrop: false })
           $('#card-holder').children().addClass('animated rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $('#card-holder').children().remove() })
