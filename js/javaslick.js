@@ -14,12 +14,12 @@ $(document).ready(function (){
   })
 
   // turn on the music
-  // let gameAudio = new Audio('audio/StarCommander1.wav');
-  // $(gameAudio).bind('ended', function()  {
-  //   gameAudio.currentTime = 0;
-  //   gameAudio.play();
-  // });
-  // gameAudio.play();
+  let gameAudio = new Audio('audio/StarCommander1.wav');
+  $(gameAudio).bind('ended', function()  {
+    gameAudio.currentTime = 0;
+    gameAudio.play();
+  });
+  gameAudio.play();
 
   // button to toggle music play/pause
   $('.sound-btn').click(function() {
@@ -143,7 +143,6 @@ $(document).ready(function (){
         // you lose pop up and animation
         if (points == 0) {
           console.log('You just destroyed planet earth!')
-          gameAudio.pause()
           let marioAudio = new Audio('audio/SuperMarioEffect.mp3')
           $(marioAudio).bind(function()  {
             marioAudio.currentTime = 0;
@@ -153,6 +152,7 @@ $(document).ready(function (){
           $('#youlose-modal').modal({ backdrop: false })
           $('#card-holder').children().addClass('animated rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $('#card-holder').children().remove() })
+          gameAudio.pause()
         }
 
         // keep track of matches, apply an animation when all are matched and game is won, run function to switch modes
