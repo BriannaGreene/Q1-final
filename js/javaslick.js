@@ -10,12 +10,12 @@ $(document).ready(function (){
     })}, 1000)
 
   // turn on the music
-  let gameAudio = new Audio('audio/StarCommander1.wav');
+  let gameAudio = new Audio('audio/StarCommander1.wav')
   $(gameAudio).bind('ended', function()  {
-    gameAudio.currentTime = 0;
-    gameAudio.play();
+    gameAudio.currentTime = 0
+    gameAudio.play()
   });
-  gameAudio.play();
+  gameAudio.play()
 
   // button to toggle music play/pause
   $('.sound-btn').click(function() {
@@ -71,13 +71,13 @@ $(document).ready(function (){
     function shuffle(array) {
       let counter = array.length;
       while (counter > 0) {
-          let index = Math.floor(Math.random() * counter);
-          counter--;
-          let temp = array[counter];
-          array[counter] = array[index];
-          array[index] = temp;
+          let index = Math.floor(Math.random() * counter)
+          counter--
+          let temp = array[counter]
+          array[counter] = array[index]
+          array[index] = temp
       }
-      return array;
+      return array
     }
     shuffle(cardsArrayOfTwenty)
 
