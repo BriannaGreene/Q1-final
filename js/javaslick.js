@@ -1,7 +1,7 @@
 $(document).ready(function (){
 
   // show loading screen on page load
-  $('#loading-modal').modal()
+  // $('#loading-modal').modal()
 
   // animate loading screen text
   setTimeout(() => {
@@ -26,21 +26,22 @@ $(document).ready(function (){
     }
   })
 
-  // NASA APOD api
-  let nasaData = $.getJSON('https://api.nasa.gov/planetary/apod?api_key=vTuOXQ2zPozXkD0WTA8SvQUcGIlXNoh9uR3IUqEe&start_date=2017-06-01&end_date=2017-08-24', function(data) {
+  // custom NASA APOD api
+  let nasaData = $.getJSON('https://starchaser-api.herokuapp.com/', function(data) {
 
     // hide loading modal when content is ready
-    $('.card-holder').ready(function() {
-      console.log('ready for launch!')
-      $('#loading-modal').fadeOut(1000, function() {
-        $('#loading-modal').modal('hide')
-      })
-    })
+    // $('.card-holder').ready(function() {
+    //   console.log('ready for launch!')
+    //   $('#loading-modal').fadeOut(1000, function() {
+    //     $('#loading-modal').modal('hide')
+    //   })
+    // })
 
     // filter and remove videos from data set (only images and gifs)
     let starPhotosArray = data.filter((element) => {
       return element['media_type'] != 'video'
     })
+    console.log(starPhotosArray);
 
     // save starPhotosArray to local storage
     localStorage.setItem('starInfo', JSON.stringify(starPhotosArray))
